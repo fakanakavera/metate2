@@ -4,7 +4,8 @@ class SeisakuNumberModel(models.Model):
     seisaku_number = models.CharField(max_length=4, primary_key=True)   # AA98
     part_number = models.CharField(max_length=30)                       # PFR5B11
     po = models.CharField(max_length=4)                                 # P10
-    part_length = models.PositiveIntegerField()                         # 73.83
+    # make a float field with 2 decimal places
+    part_length = models.FloatField()                                   # 73.83
     gata_3 = models.BooleanField()                                      # True    
     gata_5 = models.BooleanField()                                      # False   
 
