@@ -24,7 +24,7 @@ class FuranjiModel(models.Model):
         return self.furanji
     
 class PedraTypeModel(models.Model):
-    type = models.CharField(max_length=20, primary_key=True)
+    type = models.CharField(max_length=20)
     haba = models.PositiveIntegerField()
 
     def __str__(self):
