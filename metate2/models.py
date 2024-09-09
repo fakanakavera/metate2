@@ -40,13 +40,13 @@ class KumikaeOperationsModel(models.Model):
 class KumikaeModel(models.Model):
     date = models.DateTimeField()
     #pedra_number = models.ForeignKey('ListaPedraModel', on_delete=models.CASCADE)
-    flange_montado = models.ForeignKey('FuranjiModel', on_delete=models.CASCADE)
+    flange_montado = models.ForeignKey('FuranjiModel', on_delete=models.CASCADE, related_name='flange_montado')
     #code_montado = models.CharField(max_length=10)
     #hinban_montado = models.CharField(max_length=20)
     name = models.CharField(max_length=100)
     usada = models.PositiveIntegerField()  # Used quantity
     descarte = models.PositiveIntegerField()  # Discarded quantity
-    flange_desmontado = models.ForeignKey('FuranjiModel', on_delete=models.CASCADE)  # Dismantled flange
+    flange_desmontado = models.ForeignKey('FuranjiModel', on_delete=models.CASCADE, related_name='flange_desmontado')  # Dismantled flange
     #codigo_desmontado = models.CharField(max_length=10)  # Dismantled code
     #hinban_desmontado = models.CharField(max_length=20)  # Dismantled hinban
     feito = models.ForeignKey('KumikaeOperationsModel', on_delete=models.CASCADE)  # Operation done
