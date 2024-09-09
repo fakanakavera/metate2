@@ -23,8 +23,14 @@ class FuranjiModel(models.Model):
     def __str__(self):
         return self.furanji
     
+class PedraFabricanteModel(models.Model):
+    fabricante = models.CharField(max_length=20, primary_key=True)
+
+    def __str__(self):
+        return self.fabricante
+    
 class PedraTypeModel(models.Model):
-    type = models.CharField(max_length=20)
+    type = models.ForeignKey('PedraFabricanteModel', on_delete=models.CASCADE)
     haba = models.PositiveIntegerField()
 
     def __str__(self):
