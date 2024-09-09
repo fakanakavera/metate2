@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include metate2/static *
+recursive-include metate2/templates *
